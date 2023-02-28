@@ -5,10 +5,18 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Container } from '@mui/material';
+import { useContext } from 'react';
+import { DataContext } from '../Context/dataContext';
+
 
 export default function Movies() {
+
+  const { data2 } = useContext<any>( DataContext )
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Container sx={{background: 'black'}}>
+      <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         alt="green iguana"
@@ -50,6 +58,13 @@ export default function Movies() {
           <Button size="small">Learn More</Button>
         </CardActions>
     </Card>
+
+    <Typography color='white'>
+      {JSON.stringify(data2)}
+    </Typography>
+
+    </Container>
+    
 
 
   );
